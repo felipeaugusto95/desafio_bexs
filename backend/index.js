@@ -14,7 +14,7 @@ app.use(morgan('dev'));
 const url = process.env.DB_CONNECTION;
 const options = { reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useNewUrlParser: true };
 
-mongoose.connect('mongodb+srv://usuario_admin:JGaozCdI1OOtbIjK@clusterapi-gxfcv.mongodb.net/bexs?retryWrites=true&w=majority', options);
+mongoose.connect(url, options);
 mongoose.set('useCreateIndex', true);
 
 mongoose.connection.on('error', (err) => {
